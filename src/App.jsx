@@ -1,4 +1,6 @@
 import "./App.css";
+import AddGoalForm from "./containers/AddGoalForm/AddGoalForm";
+import Goals from "./components/Goals/Goals";
 
 function App() {
   return (
@@ -10,8 +12,8 @@ function App() {
         be done. Once the respective day, month or year ends, the list is empty
         for you to add new goals!
       </p>
-      {/* A form to add goals will be here */}
-      {/* Goals will be displayed here */}
+      <AddGoalForm />
+      <Goals />
     </div>
   );
 }
