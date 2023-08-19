@@ -13,7 +13,7 @@ function App() {
         for you to add new goals!
       </p>
       <AddGoalForm />
-      <Goals />
+      <Goals className="goals" />
     </div>
   );
 }

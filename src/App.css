@@ -37,3 +37,14 @@ body {
   font-weight: 300;
   padding: 0 1em 1.2em;
 }
+
+.goals {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 1em;
+  gap: 20px;
+  padding: 2em 0;
+}
