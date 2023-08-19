@@ -1,9 +1,13 @@
+import DailyGoals from "../DailyGoals/DailyGoals";
+import WeeklyGoals from "../WeeklyGoals/WeeklyGoals";
+import YearlyGoals from "../YearlyGoals/YearlyGoals";
+
 const Goals = () => {
   return (
     <div>
-      {/* Daily goals will be here */}
-      {/* Weekly goals will be here */}
-      {/* Yearly goals will be here */}
+      <DailyGoals />
+      <WeeklyGoals />
+      <YearlyGoals />
     </div>
   );
 };
