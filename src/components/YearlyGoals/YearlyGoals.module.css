@@ -1,0 +1,24 @@
+.year {
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.2em;
+  padding: 0.3em 0;
+}
+
+.items-list {
+  width: 100%;
+  padding: 0 1em 0.5em;
+  list-style-type: none;
+  font-weight: 300;
+}
+
+.list-item {
+  padding-bottom: 0.5em;
+}
+
+.card {
+  width: 100%;
+  border: 1px solid #ffbfbf;
+  background-color: #ffe5e5;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
