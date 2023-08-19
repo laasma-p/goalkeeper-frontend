@@ -22,13 +22,19 @@ const YearlyGoals = () => {
     <div className={classes.card}>
       <h2 className={classes.year}>{year}</h2>
       <ul className={classes["items-list"]}>
-        {DUMMY_YEARLY_GOALS.map((yearlyGoal) => {
-          return (
-            <li key={yearlyGoal.goalId} className={classes["list-item"]}>
-              {yearlyGoal.goalName}
-            </li>
-          );
-        })}
+        {DUMMY_YEARLY_GOALS.length === 0 ? (
+          <li className={classes["list-item"]}>
+            No goals yet. Add some to get started!
+          </li>
+        ) : (
+          DUMMY_YEARLY_GOALS.map((yearlyGoal) => {
+            return (
+              <li key={yearlyGoal.goalId} className={classes["list-item"]}>
+                {yearlyGoal.goalName}
+              </li>
+            );
+          })
+        )}
       </ul>
     </div>
   );

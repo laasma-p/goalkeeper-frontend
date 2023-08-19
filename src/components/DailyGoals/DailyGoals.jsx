@@ -37,13 +37,19 @@ const DailyGoals = () => {
     <div className={classes.card}>
       <h2 className={classes.day}>{day}</h2>
       <ul className={classes["items-list"]}>
-        {DUMMY_DAILY_GOALS.map((dailyGoal) => {
-          return (
-            <li key={dailyGoal.goalId} className={classes["list-item"]}>
-              {dailyGoal.goalName}
-            </li>
-          );
-        })}
+        {DUMMY_DAILY_GOALS.length === 0 ? (
+          <li className={classes["list-item"]}>
+            No goals yet. Add some to get started!
+          </li>
+        ) : (
+          DUMMY_DAILY_GOALS.map((dailyGoal) => {
+            return (
+              <li key={dailyGoal.goalId} className={classes["list-item"]}>
+                {dailyGoal.goalName}
+              </li>
+            );
+          })
+        )}
       </ul>
     </div>
   );

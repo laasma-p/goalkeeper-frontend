@@ -77,13 +77,19 @@ const WeeklyGoals = () => {
     <div className={classes.card}>
       <h2 className={classes.week}>Week {weekNumber}</h2>
       <ul className={classes["items-list"]}>
-        {DUMMY_WEEKLY_GOALS.map((weeklyGoal) => {
-          return (
-            <li key={weeklyGoal.goalId} className={classes["list-item"]}>
-              {weeklyGoal.goalName}
-            </li>
-          );
-        })}
+        {DUMMY_WEEKLY_GOALS.length === 0 ? (
+          <li className={classes["list-item"]}>
+            No goals yet. Add some to get started!
+          </li>
+        ) : (
+          DUMMY_WEEKLY_GOALS.map((weeklyGoal) => {
+            return (
+              <li key={weeklyGoal.goalId} className={classes["list-item"]}>
+                {weeklyGoal.goalName}
+              </li>
+            );
+          })
+        )}
       </ul>
     </div>
   );
