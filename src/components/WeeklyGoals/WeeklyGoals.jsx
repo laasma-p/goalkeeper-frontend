@@ -1,4 +1,5 @@
 import classes from "./WeeklyGoals.module.css";
+import Card from "../UI/Card";
 
 const DUMMY_WEEKLY_GOALS = [
   {
@@ -74,7 +75,7 @@ const WeeklyGoals = () => {
   const weekNumber = getWeekNumber(date);
 
   return (
-    <div className={classes.card}>
+    <Card className={classes.card}>
       <h2 className={classes.week}>Week {weekNumber}</h2>
       <ul className={classes["items-list"]}>
         {DUMMY_WEEKLY_GOALS.length === 0 ? (
@@ -91,7 +92,7 @@ const WeeklyGoals = () => {
           })
         )}
       </ul>
-    </div>
+    </Card>
   );
 };
 

@@ -1,4 +1,5 @@
 import classes from "./YearlyGoals.module.css";
+import Card from "../UI/Card";
 
 const DUMMY_YEARLY_GOALS = [
   {
@@ -19,7 +20,7 @@ const YearlyGoals = () => {
   const year = new Date().getFullYear();
 
   return (
-    <div className={classes.card}>
+    <Card className={classes.card}>
       <h2 className={classes.year}>{year}</h2>
       <ul className={classes["items-list"]}>
         {DUMMY_YEARLY_GOALS.length === 0 ? (
@@ -36,7 +37,7 @@ const YearlyGoals = () => {
           })
         )}
       </ul>
-    </div>
+    </Card>
   );
 };
 

@@ -1,4 +1,5 @@
 import classes from "./DailyGoals.module.css";
+import Card from "../UI/Card";
 
 const DUMMY_DAILY_GOALS = [
   {
@@ -34,7 +35,7 @@ const DailyGoals = () => {
   });
 
   return (
-    <div className={classes.card}>
+    <Card className={classes.card}>
       <h2 className={classes.day}>{day}</h2>
       <ul className={classes["items-list"]}>
         {DUMMY_DAILY_GOALS.length === 0 ? (
@@ -51,7 +52,7 @@ const DailyGoals = () => {
           })
         )}
       </ul>
-    </div>
+    </Card>
   );
 };
 
