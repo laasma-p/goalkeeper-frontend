@@ -5,7 +5,7 @@ import Goals from "./components/Goals/Goals";
 function App() {
   return (
     <div className="app">
-      <h1 className="app-heading">Welcome to the Goalkeeper.</h1>
+      <h1 className="app-heading">Welcome to Goalkeeper.</h1>
       <p className="app-info">
         This is an app where you goals can be added for an upcoming week, a
         month or a year to have a organized list of all the activities want to
