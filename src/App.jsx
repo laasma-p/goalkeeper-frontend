@@ -13,7 +13,12 @@ function App() {
         for you to add new goals!
       </p>
       <AddGoalForm />
-      <Goals className="goals" />
+      <Goals
+        className="goals"
+        dailyGoals={dailyGoals}
+        weeklyGoals={weeklyGoals}
+        yearlyGoals={yearlyGoals}
+      />
     </div>
   );
 }
