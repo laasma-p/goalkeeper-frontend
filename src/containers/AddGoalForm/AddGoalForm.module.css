@@ -68,6 +68,17 @@
   outline: none; /* Remove default focus outline */
 }
 
+.success-message {
+  width: 90%;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  border-radius: 8px;
+  font-size: 1em;
+  margin-top: 0.6em;
+  background-color: #a8df8e;
+  border: none;
+  padding: 1em;
+}
+
 @media screen and (min-width: 769px) and (max-width: 1159px) {
   .add-goal {
     max-width: 60%;
