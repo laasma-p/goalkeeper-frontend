@@ -48,3 +48,38 @@ body {
   gap: 20px;
   padding: 2em 0;
 }
+
+@media screen and (min-width: 769px) and (max-width: 1159px) {
+  .app-heading,
+  .app-info {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .goals {
+    max-width: 60%;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .app-heading,
+  .app-info {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .app-info {
+    font-weight: 300;
+    padding: 0 1em 1.2em;
+  }
+
+  .goals {
+    max-width: 70%;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}
