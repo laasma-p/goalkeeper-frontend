@@ -8,6 +8,39 @@ function App() {
   const [weeklyGoals, setWeeklyGoals] = useState([]);
   const [yearlyGoals, setYearlyGoals] = useState([]);
 
+  const addDailyGoalHandler = (dailyGoal) => {
+    setDailyGoals((prevDailyGoals) => {
+      return [dailyGoal, ...prevDailyGoals];
+    });
+  };
+
+  const addWeeklyGoalHandler = (weeklyGoal) => {
+    setWeeklyGoals((prevWeeklyGoals) => {
+      return [weeklyGoal, ...prevWeeklyGoals];
+    });
+  };
+
+  const addYearlyGoalHandler = (yearlyGoal) => {
+    setYearlyGoals((prevYearlyGoals) => {
+      return [yearlyGoal, ...prevYearlyGoals];
+    });
+  };
+
+  const addGoalHandler = (goal, addToGoals) => {
+    const newGoal = {
+      goalId: Math.random().toString(),
+      goalName: goal,
+    };
+
+    if (addToGoals === "daily") {
+      addDailyGoalHandler(newGoal);
+    } else if (addToGoals === "weekly") {
+      addWeeklyGoalHandler(newGoal);
+    } else if (addToGoals === "yearly") {
+      addYearlyGoalHandler(newGoal);
+    }
+  };
+
   return (
     <div className="app">
       <h1 className="app-heading">Welcome to Goalkeeper.</h1>
@@ -17,7 +50,7 @@ function App() {
         be done. Once the respective day, month or year ends, the list is empty
         for you to add new goals!
       </p>
-      <AddGoalForm />
+      <AddGoalForm onAddGoal={addGoalHandler} />
       <Goals
         className="goals"
         dailyGoals={dailyGoals}
