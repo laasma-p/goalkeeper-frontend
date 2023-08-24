@@ -67,3 +67,15 @@
   appearance: none;
   outline: none; /* Remove default focus outline */
 }
+
+@media screen and (min-width: 769px) and (max-width: 1159px) {
+  .add-goal {
+    max-width: 60%;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .add-goal {
+    max-width: 70%;
+  }
+}
