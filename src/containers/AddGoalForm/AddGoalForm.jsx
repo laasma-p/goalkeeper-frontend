@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./AddGoalForm.module.css";
 
-const AddGoalForm = () => {
+const AddGoalForm = ({ onAddGoal }) => {
   const [enteredGoal, setEnteredGoal] = useState("");
   const [chosenAddToGoals, setChosenAddToGoals] = useState("daily");
 
@@ -15,6 +15,8 @@ const AddGoalForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+
+    onAddGoal(enteredGoal, chosenAddToGoals);
 
     setEnteredGoal("");
     setChosenAddToGoals("daily");
