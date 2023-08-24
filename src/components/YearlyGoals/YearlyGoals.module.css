@@ -22,3 +22,15 @@
   background-color: #ffe5e5;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
+
+@media screen and (min-width: 769px) and (max-width: 1159px) {
+  .year {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .card {
+    width: 25%;
+  }
+}
