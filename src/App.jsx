@@ -1,8 +1,13 @@
 import "./App.css";
 import AddGoalForm from "./containers/AddGoalForm/AddGoalForm";
 import Goals from "./components/Goals/Goals";
+import { useState } from "react";
 
 function App() {
+  const [dailyGoals, setDailyGoals] = useState([]);
+  const [weeklyGoals, setWeeklyGoals] = useState([]);
+  const [yearlyGoals, setYearlyGoals] = useState([]);
+
   return (
     <div className="app">
       <h1 className="app-heading">Welcome to Goalkeeper.</h1>
