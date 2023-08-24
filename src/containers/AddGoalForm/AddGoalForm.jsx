@@ -4,6 +4,7 @@ import classes from "./AddGoalForm.module.css";
 const AddGoalForm = ({ onAddGoal }) => {
   const [enteredGoal, setEnteredGoal] = useState("");
   const [chosenAddToGoals, setChosenAddToGoals] = useState("daily");
+  const [isGoalAdded, setIsGoalAdded] = useState(false);
 
   const enteredGoalChangeHandler = (event) => {
     setEnteredGoal(event.target.value);
@@ -20,10 +21,20 @@ const AddGoalForm = ({ onAddGoal }) => {
 
     setEnteredGoal("");
     setChosenAddToGoals("daily");
+    setIsGoalAdded(true);
+
+    setTimeout(() => {
+      setIsGoalAdded(false);
+    }, 3000);
   };
 
   return (
     <div className={classes["add-goal"]}>
+      {isGoalAdded && (
+        <p className={classes["success-message"]}>
+          Goal added successfully! Add another one?
+        </p>
+      )}
       <form className={classes["add-goal-form"]} onSubmit={submitHandler}>
         <div className={classes["form-control"]}>
           <label htmlFor="goal">Goal</label>
