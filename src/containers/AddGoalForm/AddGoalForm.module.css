@@ -43,6 +43,7 @@
 
 .form-control select {
   background-color: #fff;
+  cursor: pointer;
 }
 
 .form-control input[type="text"],
@@ -66,6 +67,10 @@
   -moz-appearance: none; /* Disable default styles on Firefox */
   appearance: none;
   outline: none; /* Remove default focus outline */
+}
+
+.add-goal-button:disabled {
+  pointer-events: none; /* Disable pointer events on the disabled button */
 }
 
 .success-message {
