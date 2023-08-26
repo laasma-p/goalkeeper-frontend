@@ -17,6 +17,10 @@ const AddGoalForm = ({ onAddGoal }) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    if (enteredGoal.trim() === "") {
+      return;
+    }
+
     onAddGoal(enteredGoal, chosenAddToGoals);
 
     setEnteredGoal("");
@@ -27,6 +31,8 @@ const AddGoalForm = ({ onAddGoal }) => {
       setIsGoalAdded(false);
     }, 3000);
   };
+
+  const isAddButtonDisabled = enteredGoal.trim() === "";
 
   return (
     <div className={classes["add-goal"]}>
@@ -61,7 +67,11 @@ const AddGoalForm = ({ onAddGoal }) => {
           </select>
         </div>
 
-        <button type="submit" className={classes["add-goal-button"]}>
+        <button
+          type="submit"
+          className={classes["add-goal-button"]}
+          disabled={isAddButtonDisabled}
+        >
           Add Goal
         </button>
       </form>
