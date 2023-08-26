@@ -5,9 +5,23 @@ const AddGoalForm = ({ onAddGoal }) => {
   const [enteredGoal, setEnteredGoal] = useState("");
   const [chosenAddToGoals, setChosenAddToGoals] = useState("daily");
   const [isGoalAdded, setIsGoalAdded] = useState(false);
+  const [showGoalMessage, setShowGoalMessage] = useState(false);
+  const [inputClicked, setInputClicked] = useState(false);
 
   const enteredGoalChangeHandler = (event) => {
     setEnteredGoal(event.target.value);
+    setShowGoalMessage(false);
+  };
+
+  const inputBlurHandler = () => {
+    if (enteredGoal.trim() === "" && inputClicked) {
+      setShowGoalMessage(true);
+    }
+  };
+
+  const inputFocusHandler = () => {
+    setShowGoalMessage(inputClicked && enteredGoal.trim() === "");
+    setInputClicked(true);
   };
 
   const chosenAddToGoalsChangeHandler = (event) => {
@@ -41,6 +55,9 @@ const AddGoalForm = ({ onAddGoal }) => {
           Goal added successfully! Add another one?
         </p>
       )}
+      {showGoalMessage && (
+        <p className={classes["error-message"]}>Please enter a goal.</p>
+      )}
       <form className={classes["add-goal-form"]} onSubmit={submitHandler}>
         <div className={classes["form-control"]}>
           <label htmlFor="goal">Goal</label>
@@ -50,6 +67,8 @@ const AddGoalForm = ({ onAddGoal }) => {
             name="goal-name"
             onChange={enteredGoalChangeHandler}
             value={enteredGoal}
+            onBlur={inputBlurHandler}
+            onFocus={inputFocusHandler}
           />
         </div>
 
