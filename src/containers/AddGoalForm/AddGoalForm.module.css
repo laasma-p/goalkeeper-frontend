@@ -41,6 +41,11 @@
   border: none;
 }
 
+.form-control input[type="text"]:focus,
+.form-control select:focus {
+  outline-color: #a8df8e;
+}
+
 .form-control select {
   background-color: #fff;
   cursor: pointer;
@@ -80,6 +85,17 @@
   font-size: 1em;
   margin-top: 0.6em;
   background-color: #a8df8e;
+  border: none;
+  padding: 1em;
+}
+
+.error-message {
+  width: 90%;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  border-radius: 8px;
+  font-size: 1em;
+  margin-top: 0.6em;
+  background-color: #f9c0c0;
   border: none;
   padding: 1em;
 }
