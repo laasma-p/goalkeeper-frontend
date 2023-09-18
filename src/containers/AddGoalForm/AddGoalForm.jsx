@@ -1,7 +1,8 @@
 import { useState } from "react";
 import classes from "./AddGoalForm.module.css";
+import axios from "axios";
 
-const AddGoalForm = ({ onAddGoal }) => {
+const AddGoalForm = () => {
   const [enteredGoal, setEnteredGoal] = useState("");
   const [chosenAddToGoals, setChosenAddToGoals] = useState("daily");
   const [isGoalAdded, setIsGoalAdded] = useState(false);
@@ -28,22 +29,29 @@ const AddGoalForm = ({ onAddGoal }) => {
     setChosenAddToGoals(event.target.value);
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
 
     if (enteredGoal.trim() === "") {
       return;
     }
 
-    onAddGoal(enteredGoal, chosenAddToGoals);
+    try {
+      const response = await axios.post("http://localhost:3000/add-a-goal", {
+        goalName: enteredGoal,
+        category: chosenAddToGoals,
+      });
 
-    setEnteredGoal("");
-    setChosenAddToGoals("daily");
-    setIsGoalAdded(true);
+      setEnteredGoal("");
+      setChosenAddToGoals("daily");
+      setIsGoalAdded(true);
 
-    setTimeout(() => {
-      setIsGoalAdded(false);
-    }, 3000);
+      setTimeout(() => {
+        setIsGoalAdded(false);
+      }, 3000);
+    } catch (error) {
+      console.error("Could not add a goal:", error);
+    }
   };
 
   const isAddButtonDisabled = enteredGoal.trim() === "";
