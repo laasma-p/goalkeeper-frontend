@@ -13,13 +13,16 @@ const YearlyGoals = ({ yearlyGoals }) => {
             No goals yet. Add some to get started!
           </li>
         ) : (
-          yearlyGoals.map((yearlyGoal) => {
-            return (
-              <li key={yearlyGoal.goal_id} className={classes["list-item"]}>
-                {yearlyGoal.goal_name}
-              </li>
-            );
-          })
+          yearlyGoals
+            .slice()
+            .reverse()
+            .map((yearlyGoal) => {
+              return (
+                <li key={yearlyGoal.goal_id} className={classes["list-item"]}>
+                  {yearlyGoal.goal_name}
+                </li>
+              );
+            })
         )}
       </ul>
     </Card>

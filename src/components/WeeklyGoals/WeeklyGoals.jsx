@@ -32,13 +32,16 @@ const WeeklyGoals = ({ weeklyGoals }) => {
             No goals yet. Add some to get started!
           </li>
         ) : (
-          weeklyGoals.map((weeklyGoal) => {
-            return (
-              <li key={weeklyGoal.goal_id} className={classes["list-item"]}>
-                {weeklyGoal.goal_name}
-              </li>
-            );
-          })
+          weeklyGoals
+            .slice()
+            .reverse()
+            .map((weeklyGoal) => {
+              return (
+                <li key={weeklyGoal.goal_id} className={classes["list-item"]}>
+                  {weeklyGoal.goal_name}
+                </li>
+              );
+            })
         )}
       </ul>
     </Card>

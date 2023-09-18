@@ -16,13 +16,16 @@ const DailyGoals = ({ dailyGoals }) => {
             No goals yet. Add some to get started!
           </li>
         ) : (
-          dailyGoals.map((dailyGoal) => {
-            return (
-              <li key={dailyGoal.goal_id} className={classes["list-item"]}>
-                {dailyGoal.goal_name}
-              </li>
-            );
-          })
+          dailyGoals
+            .slice()
+            .reverse()
+            .map((dailyGoal) => {
+              return (
+                <li key={dailyGoal.goal_id} className={classes["list-item"]}>
+                  {dailyGoal.goal_name}
+                </li>
+              );
+            })
         )}
       </ul>
     </Card>
