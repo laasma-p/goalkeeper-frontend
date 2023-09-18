@@ -2,7 +2,7 @@ import { useState } from "react";
 import classes from "./AddGoalForm.module.css";
 import axios from "axios";
 
-const AddGoalForm = () => {
+const AddGoalForm = ({ fetchUpdatedGoals }) => {
   const [enteredGoal, setEnteredGoal] = useState("");
   const [chosenAddToGoals, setChosenAddToGoals] = useState("daily");
   const [isGoalAdded, setIsGoalAdded] = useState(false);
@@ -49,6 +49,8 @@ const AddGoalForm = () => {
       setTimeout(() => {
         setIsGoalAdded(false);
       }, 3000);
+
+      fetchUpdatedGoals();
     } catch (error) {
       console.error("Could not add a goal:", error);
     }

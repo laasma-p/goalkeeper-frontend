@@ -78,7 +78,7 @@ function App() {
         be done. Once the respective day, month or year ends, the list is empty
         for you to add new goals!
       </p>
-      <AddGoalForm onAddGoal={addGoalHandler} />
+      <AddGoalForm fetchUpdatedGoals={fetchGoals} />
       <Goals
         className="goals"
         dailyGoals={dailyGoals}
