@@ -34,8 +34,8 @@ const WeeklyGoals = ({ weeklyGoals }) => {
         ) : (
           weeklyGoals.map((weeklyGoal) => {
             return (
-              <li key={weeklyGoal.goalId} className={classes["list-item"]}>
-                {weeklyGoal.goalName}
+              <li key={weeklyGoal.goal_id} className={classes["list-item"]}>
+                {weeklyGoal.goal_name}
               </li>
             );
           })

@@ -15,8 +15,8 @@ const YearlyGoals = ({ yearlyGoals }) => {
         ) : (
           yearlyGoals.map((yearlyGoal) => {
             return (
-              <li key={yearlyGoal.goalId} className={classes["list-item"]}>
-                {yearlyGoal.goalName}
+              <li key={yearlyGoal.goal_id} className={classes["list-item"]}>
+                {yearlyGoal.goal_name}
               </li>
             );
           })

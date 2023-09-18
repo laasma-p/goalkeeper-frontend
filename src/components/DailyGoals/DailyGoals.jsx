@@ -18,8 +18,8 @@ const DailyGoals = ({ dailyGoals }) => {
         ) : (
           dailyGoals.map((dailyGoal) => {
             return (
-              <li key={dailyGoal.goalId} className={classes["list-item"]}>
-                {dailyGoal.goalName}
+              <li key={dailyGoal.goal_id} className={classes["list-item"]}>
+                {dailyGoal.goal_name}
               </li>
             );
           })
