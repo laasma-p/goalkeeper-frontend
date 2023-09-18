@@ -1,12 +1,40 @@
 import "./App.css";
 import AddGoalForm from "./containers/AddGoalForm/AddGoalForm";
 import Goals from "./components/Goals/Goals";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
   const [dailyGoals, setDailyGoals] = useState([]);
   const [weeklyGoals, setWeeklyGoals] = useState([]);
   const [yearlyGoals, setYearlyGoals] = useState([]);
+
+  const fetchGoals = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/");
+      const goalsData = response.data;
+
+      const dailyGoalsData = goalsData.filter(
+        (goal) => goal.category === "daily"
+      );
+      const weeklyGoalsData = goalsData.filter(
+        (goal) => goal.category === "weekly"
+      );
+      const yearlyGoalsData = goalsData.filter(
+        (goal) => goal.category === "yearly"
+      );
+
+      setDailyGoals(dailyGoalsData);
+      setWeeklyGoals(weeklyGoalsData);
+      setYearlyGoals(yearlyGoalsData);
+    } catch (error) {
+      console.error("Could not fetch goals:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchGoals();
+  }, []);
 
   const addDailyGoalHandler = (dailyGoal) => {
     setDailyGoals((prevDailyGoals) => {
