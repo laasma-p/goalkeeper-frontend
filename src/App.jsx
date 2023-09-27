@@ -27,9 +27,7 @@ function App() {
       setDailyGoals(dailyGoalsData);
       setWeeklyGoals(weeklyGoalsData);
       setYearlyGoals(yearlyGoalsData);
-    } catch (error) {
-      console.error("Could not fetch goals:", error);
-    }
+    } catch (error) {}
   };
 
   useEffect(() => {

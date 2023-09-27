@@ -51,9 +51,7 @@ const AddGoalForm = ({ fetchUpdatedGoals }) => {
       }, 3000);
 
       fetchUpdatedGoals();
-    } catch (error) {
-      console.error("Could not add a goal:", error);
-    }
+    } catch (error) {}
   };
 
   const isAddButtonDisabled = enteredGoal.trim() === "";
