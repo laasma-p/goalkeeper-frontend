@@ -37,9 +37,12 @@ const AddGoalForm = ({ fetchUpdatedGoals }) => {
     }
 
     try {
+      const token = localStorage.getItem("token");
+
       const response = await axios.post("http://localhost:3000/add-a-goal", {
         goalName: enteredGoal,
         category: chosenAddToGoals,
+        user_token: token,
       });
 
       setEnteredGoal("");
