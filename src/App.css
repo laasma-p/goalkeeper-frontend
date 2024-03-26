@@ -62,6 +62,10 @@ body {
 }
 
 @media screen and (max-width: 320px) {
+  .app {
+    margin: 3em 0 2em;
+  }
+
   .app-heading {
     font-size: 1.4em;
   }
@@ -81,6 +85,10 @@ body {
 }
 
 @media screen and (min-width: 321px) and (max-width: 768px) {
+  .app {
+    margin-top: 6em;
+  }
+
   .actions {
     gap: 10px;
   }
@@ -95,6 +103,10 @@ body {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1159px) {
+  .app {
+    margin-top: 9em;
+  }
+
   .app-heading,
   .app-info {
     width: 60%;
@@ -107,6 +119,10 @@ body {
 }
 
 @media screen and (min-width: 1160px) {
+  .app {
+    margin-top: 10em;
+  }
+
   .app-heading,
   .app-info {
     width: 70%;
