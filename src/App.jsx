@@ -1,4 +1,5 @@
 import "./App.css";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -15,8 +16,16 @@ function App() {
         registered, log in to continue.
       </p>
       <div className="actions">
-        <button className="action-button">Register</button>
-        <button className="action-button">Log in</button>
+        <button className="action-button">
+          <Link to={`register`} className="button-link">
+            Register
+          </Link>
+        </button>
+        <button className="action-button">
+          <Link to={`login`} className="button-link">
+            Login
+          </Link>
+        </button>
       </div>
     </div>
   );
