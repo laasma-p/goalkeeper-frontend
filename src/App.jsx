@@ -1,39 +1,6 @@
 import "./App.css";
-import AddGoalForm from "./containers/AddGoalForm/AddGoalForm";
-import Goals from "./components/Goals/Goals";
-import { useState, useEffect } from "react";
-import axios from "axios";
 
 function App() {
-  const [dailyGoals, setDailyGoals] = useState([]);
-  const [weeklyGoals, setWeeklyGoals] = useState([]);
-  const [yearlyGoals, setYearlyGoals] = useState([]);
-
-  const fetchGoals = async () => {
-    try {
-      const response = await axios.get("http://localhost:3000/");
-      const goalsData = response.data;
-
-      const dailyGoalsData = goalsData.filter(
-        (goal) => goal.category === "daily"
-      );
-      const weeklyGoalsData = goalsData.filter(
-        (goal) => goal.category === "weekly"
-      );
-      const yearlyGoalsData = goalsData.filter(
-        (goal) => goal.category === "yearly"
-      );
-
-      setDailyGoals(dailyGoalsData);
-      setWeeklyGoals(weeklyGoalsData);
-      setYearlyGoals(yearlyGoalsData);
-    } catch (error) {}
-  };
-
-  useEffect(() => {
-    fetchGoals();
-  }, []);
-
   return (
     <div className="app">
       <h1 className="app-heading">Welcome to Goalkeeper.</h1>
@@ -43,13 +10,14 @@ function App() {
         be done. Once the respective day, month or year ends, the list is empty
         for you to add new goals!
       </p>
-      <AddGoalForm fetchUpdatedGoals={fetchGoals} />
-      <Goals
-        className="goals"
-        dailyGoals={dailyGoals}
-        weeklyGoals={weeklyGoals}
-        yearlyGoals={yearlyGoals}
-      />
+      <p className="app-info">
+        If you are new, register to gain access to the app. If you are already
+        registered, log in to continue.
+      </p>
+      <div className="actions">
+        <button className="action-button">Register</button>
+        <button className="action-button">Log in</button>
+      </div>
     </div>
   );
 }
