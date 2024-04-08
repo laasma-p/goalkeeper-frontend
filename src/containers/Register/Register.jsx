@@ -1,5 +1,6 @@
 import classes from "./Register.module.css";
 import { useState } from "react";
+import axios from "axios";
 
 const Register = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -15,6 +16,15 @@ const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:3000/register", {
+        enteredEmail,
+        enteredPassword,
+      });
+    } catch (error) {
+      console.error("Error registering user:", error);
+    }
   };
 
   return (
