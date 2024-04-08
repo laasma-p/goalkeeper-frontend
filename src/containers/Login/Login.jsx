@@ -1,9 +1,12 @@
 import classes from "./Login.module.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
+  const navigate = useNavigate();
 
   const enteredEmailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
@@ -15,6 +18,21 @@ const Login = () => {
 
   const loginHandler = async (event) => {
     event.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:3000/login", {
+        enteredEmail,
+        enteredPassword,
+      });
+
+      if (response.status === 200) {
+        navigate("/goals");
+      } else {
+        console.error("Login failed");
+      }
+    } catch (error) {
+      console.error("Error logging in:", error);
+    }
   };
 
   return (
@@ -50,4 +68,5 @@ const Login = () => {
     </div>
   );
 };
+
 export default Login;
