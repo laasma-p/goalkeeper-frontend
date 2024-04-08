@@ -1,0 +1,28 @@
+.goals {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 1em;
+  gap: 20px;
+  padding: 2em 0;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1159px) {
+  .goals {
+    max-width: 60%;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .goals {
+    max-width: 70%;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+}
