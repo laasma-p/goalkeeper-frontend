@@ -43,7 +43,7 @@
 
 .form-control input[type="text"]:focus,
 .form-control select:focus {
-  outline-color: #a8df8e;
+  outline-color: #a0c49d;
 }
 
 .form-control select {
@@ -60,7 +60,7 @@
 
 .add-goal-button {
   margin-top: 0.6em;
-  background-color: #f3fde8;
+  background-color: #a0c49d;
   border: none;
   padding: 1em;
   cursor: pointer;
@@ -68,6 +68,7 @@
 
 .add-goal-button:hover {
   background-color: #a8df8e;
+  color: #fff;
   -webkit-tap-highlight-color: transparent; /* Disable tap highlight */
   -moz-appearance: none; /* Disable default styles on Firefox */
   appearance: none;
