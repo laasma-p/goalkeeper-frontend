@@ -1,0 +1,111 @@
+.app-heading {
+  color: #a0c49d;
+  font-weight: 500;
+  padding: 0.7em 0.5em 0.5em;
+}
+
+.app-heading,
+.app-info {
+  text-align: center;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+.app-info {
+  font-weight: 300;
+  padding: 0 1.4em 1.2em;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  padding: 0 1em 1em;
+}
+
+.action-button {
+  border: none;
+}
+
+.button-link {
+  padding: 0.8em 2.8em;
+  color: #000;
+  background-color: #a0c49d;
+  display: block;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 8px;
+}
+
+.button-link:hover {
+  background-color: #a8df8e;
+  color: #fff;
+}
+
+@media screen and (max-width: 320px) {
+  .app {
+    margin: 3em 0 2em;
+  }
+
+  .app-heading {
+    font-size: 1.4em;
+  }
+
+  .actions {
+    flex-direction: column;
+    margin: 0.6em 0;
+    gap: 0.6em;
+  }
+
+  .button-link {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  .app {
+    margin-top: 6em;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+
+  .button-link {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1159px) {
+  .app {
+    margin-top: 9em;
+  }
+
+  .app-heading,
+  .app-info {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .app {
+    margin-top: 10em;
+  }
+
+  .app-heading,
+  .app-info {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .app-info {
+    font-weight: 300;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+}
