@@ -69,3 +69,39 @@
   background-color: #a8df8e;
   color: #fff;
 }
+
+@media screen and (max-width: 320px) {
+  .form-label {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  .login-heading {
+    font-size: 1.6em;
+  }
+
+  .form-container {
+    max-width: 550px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1159px) {
+  .login-heading {
+    font-size: 1.8em;
+  }
+
+  .form-container {
+    max-width: 600px;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .login-heading {
+    font-size: 2em;
+  }
+
+  .form-container {
+    max-width: 670px;
+  }
+}
