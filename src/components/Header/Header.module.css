@@ -1,0 +1,26 @@
+.header {
+  height: 80px;
+  background-color: #f9c0c0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-link {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  color: #000;
+  background-color: #a0c49d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 120px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  margin: 1em 2em;
+}
+
+.button-link:hover {
+  background-color: #a8df8e;
+  color: #fff;
+}
