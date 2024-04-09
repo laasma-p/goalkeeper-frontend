@@ -26,6 +26,29 @@
   justify-content: center;
   align-items: center;
   border: 1px solid #ffbfbf;
+  padding: 0 2em;
+}
+
+.success-message {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  border-radius: 8px;
+  font-size: 1em;
+  margin-top: 1em;
+  width: 100%;
+  background-color: #a8df8e;
+  border: none;
+  padding: 1em;
+}
+
+.error-message {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  border-radius: 8px;
+  font-size: 1em;
+  margin-top: 1em;
+  width: 100%;
+  background-color: #ffbfbf;
+  border: none;
+  padding: 1em;
 }
 
 .register-form {
