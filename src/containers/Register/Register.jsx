@@ -27,7 +27,6 @@ const Register = () => {
       setIsRegistered(true);
     } catch (error) {
       console.error("Error registering user:", error);
-      setIsRegistered(false);
     }
   };
 
@@ -39,9 +38,6 @@ const Register = () => {
           <p className={classes["success-message"]}>
             You have been successfully registered.
           </p>
-        )}
-        {!isRegistered && (
-          <p className={classes["error-message"]}>Cannot register the user.</p>
         )}
         <form className={classes["register-form"]} onSubmit={handleSubmit}>
           <label htmlFor="email" className={classes["form-label"]}>
