@@ -50,7 +50,7 @@ const Login = () => {
             value={enteredEmail}
             onChange={enteredEmailChangeHandler}
           />
-          <label htmlFor="email" className={classes["form-label"]}>
+          <label htmlFor="password" className={classes["form-label"]}>
             Password
           </label>
           <input

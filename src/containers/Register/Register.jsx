@@ -33,9 +33,10 @@ const Register = () => {
       <div className={classes["form-container"]}>
         <form className={classes["register-form"]} onSubmit={handleSubmit}>
           <label htmlFor="email" className={classes["form-label"]}>
-            Email
+            E-mail
           </label>
           <input
+            id="email"
             type="email"
             className={classes.input}
             onChange={enteredEmailChangeHandler}
@@ -46,6 +47,7 @@ const Register = () => {
             Password
           </label>
           <input
+            id="password"
             type="password"
             className={classes.input}
             onChange={enteredPasswordChangeHandler}
