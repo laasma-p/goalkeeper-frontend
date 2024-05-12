@@ -14,7 +14,14 @@ const Goals = () => {
 
   const fetchGoals = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/goals");
+      const token = localStorage.getItem("token");
+
+      const response = await axios.get("http://localhost:3000/goals", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
       const goalsData = response.data;
 
       const dailyGoalsData = goalsData.filter(

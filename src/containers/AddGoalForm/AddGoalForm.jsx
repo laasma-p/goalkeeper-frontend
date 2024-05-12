@@ -37,10 +37,20 @@ const AddGoalForm = ({ fetchUpdatedGoals }) => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/add-a-goal", {
-        goalName: enteredGoal,
-        category: chosenAddToGoals,
-      });
+      const token = localStorage.getItem("token");
+
+      const response = await axios.post(
+        "http://localhost:3000/add-a-goal",
+        {
+          goalName: enteredGoal,
+          category: chosenAddToGoals,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       setEnteredGoal("");
       setChosenAddToGoals("daily");
